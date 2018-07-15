@@ -1,6 +1,6 @@
 # XuanWheel bluetooth protocol RE
 
-The XuanWheel is a commercial bicycle wheel LED light "SPOVE". See https://www.amazon.com/dp/B0752Y8DSZ/ for more information.
+The XuanWheel is a commercial bicycle wheel LED light "SPOKE". See https://www.amazon.com/dp/B0752Y8DSZ/ for more information.
 
 This project aims to reverse engineer the protocol use to communicate with the
 wheel in order to be able to send GIFs, bitmaps and receive telemetry without
