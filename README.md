@@ -41,15 +41,30 @@ leng(length byte): 8 bytes
 
 ### Battery
 
-Content TODO
+ ```
+ 6.bytes header, value: 0x106002000174 (big endian)
+ ```
+
+TODO: Description
 
 ## XuanWheel (Legacy)
 
 ### Name
 
+ ```
+ 0-{4-12}.bytes name, value: "BLE+".
+ ```
+
 Define wheel name
 
 ### Angle
+
+ angle(angle 2.bytes (degree?))
+ ```
+ 4.bytes header, value: 0x10420002 (big endian)
+ 2.bytes angle, value: angle (big endian)
+ 1 byte checksum?, value: TODO more work needed
+ ```
 
 Define angle of the wheel
 
