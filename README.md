@@ -51,8 +51,9 @@ TODO: Description
 
 ### Name
 
+ name(name [4;12].bytes)
  ```
- 0-{4-12}.bytes name, value: "BLE+".
+ 0-[4;12].bytes name, value: "BLE+".
  ```
 
 Define wheel name
@@ -84,6 +85,14 @@ Upload bitmap to a wheel
 ## Fast Wheel
 
 ### Name
+
+ name(name [0;16[.bytes)
+ ```
+ 3.bytes header, value: 0x7a7dff (big endian)
+ 2.bytes length, value: name.length (big endian)
+ [0;16[.bytes name, value: c string
+ 3.bytes footer, value: 0xff
+ ```
 
 Define wheel name
 
