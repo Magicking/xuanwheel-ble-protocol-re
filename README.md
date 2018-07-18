@@ -21,7 +21,7 @@ delay(time? 2.bytes): 7 bytes
  1 byte  checksum?, value: (0xa2 + delay[0]) + delay[1] truncated to 8 bits
  ```
 
-leng(length byte): 8 bytes
+length(length byte): 8 bytes
 
  ```
  5.bytes header, value: 0x1031000200 (big endian)
@@ -90,13 +90,13 @@ Upload bitmap to a wheel
  ```
  3.bytes header, value: 0x7a7dff (big endian)
  2.bytes length, value: name.length (big endian)
- [0;16[.bytes name, value: c string
- 3.bytes footer, value: 0xff
+ [0;16[.bytes name, value: C string
+ 3.bytes footer, value: 0x7e7fff
  ```
 
 Define wheel name
 
-###Angle
+### Angle
 
 Define angle of the wheel
 
@@ -110,6 +110,14 @@ Upload modified GIF data to a wheel
 TODO: gif data format gif
 
 ### BitmapUpload
+
+ upload_static(bitmap X.bytes)
+ ```
+ TODO(yy might be hex(-81)
+ 8.bytes header, value: 0x7a7dff300caf000100 (big endian)
+ TODO
+ 3.bytes footer, value: 0x7e7fff
+ ```
 
 Upload bitmap to a wheel
 
