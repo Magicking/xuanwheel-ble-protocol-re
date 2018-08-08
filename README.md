@@ -113,11 +113,19 @@ TODO: gif data format gif
 
  upload_static(bitmap X.bytes)
  ```
- TODO(yy might be hex(-81)
- 8.bytes header, value: 0x7a7dff300caf000100 (big endian)
- TODO
- 3.bytes footer, value: 0x7e7fff
+ 9.bytes header, value: 0x7a7dff300caf000100 (big endian)
+ 3240.bytes image data, (60x54 px?)
+ 1 byte checksum, value: chk
+ 3.bytes footer, value: 0x7e7fff (big endian)
  ```
+
+ checksum calculation:
+ 1 byte chk
+ 1 byte B (pixel)
+ chk = 0xEC
+ for each B in bitmap
+   chk = chk + B
+
 
 Upload bitmap to a wheel
 
@@ -125,12 +133,16 @@ Upload bitmap to a wheel
 
  * Describe commands data structure
  * Do packet analysis
+ * Describe image format
 
 # Contribute
 
 Use any APK decompiler or the iOS equivalent to look at 
 the XuanWheel App and do documentation on how the app communicate
 with the wheels.
+
+Interesting files:
+ - utils/bluetooth/command/CommandBuilder.java
 
 Android: https://play.google.com/store/apps/details?id=com.ixuanlun.xuanwheel
 iOS: https://itunes.apple.com/us/app/xuanwheel-your-riding-company/id1044544133
