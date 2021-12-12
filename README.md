@@ -1,5 +1,8 @@
 # XuanWheel bluetooth protocol RE
 
+/!\ Project on hiatus, bike got stolen. /!\
+===========================================
+
 The XuanWheel is a commercial bicycle wheel LED light "SPOKE". See https://www.amazon.com/dp/B0752Y8DSZ/ for more information.
 
 This project aims to reverse engineer the protocol use to communicate with the
